@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import Card from "@/app/components/navigation/card";
-
-
+import Card from "@/app/components/card";
 
 async function getData() {
   const response = await fetch(
@@ -22,7 +20,20 @@ const About = async ( { params  } : any) => {
 
   return (
     <>
-      <Card></Card>
+      <div className="container mx-auto px-4 h-full">
+        
+              <h1> About us</h1>
+
+              <div className="grid grid-cols-4 gap-4">
+                {
+                  get.map( (data) => (
+                    <Card data={data}></Card>
+                  ))
+                }
+              </div>
+            
+              
+      </div>
     </>
   );
 };
